@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-rendering: geometricPrecision;
+    shape-rendering: geometricPrecision;
+    
+    
+}
+
+body{
+    background-color: #e1e8e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1rem;
+
+}
+
+.cardBase{
+    background-image: linear-gradient(#f0f0f0bb, #fff);
+    background-color: white;
+    border-radius: 1.3em ;
+    border: 1px solid #ffffff;
+    width: 300px;
+    height: 400px;
+    box-shadow: 0em 1em 1em -0.5em #0000000e, 
+    inset 0em 0em 1em -0.1em #ebebebbb;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    column-gap: 0.5em;
+    row-gap: 0.5em;
+    color: red;
+    
+}
+
+.numberLeft{
+    display: grid;
+    grid-column: 1 / 1;
+    grid-row: 1 / 4;
+    /* background-color: antiquewhite; */
+    align-items: start;
+    justify-content: center;
+    padding: 1em;
+}
+
+.mainContainer{
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    /* background-color: aqua; */
+    padding: 1em;
+    align-items: center;
+    justify-content: center;
+
+}
+.numberRight{
+    display: grid;
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;
+    /* background-color: antiquewhite; */
+    align-items: end;
+    justify-content: center;
+    padding: 1em;
+}
+
+.iconNumberContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS';
+}
