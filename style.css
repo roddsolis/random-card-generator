@@ -4,8 +4,6 @@
     box-sizing: border-box;
     text-rendering: geometricPrecision;
     shape-rendering: geometricPrecision;
-    
-    
 }
 
 body{
@@ -14,33 +12,26 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-size: 1rem;
-
 }
 
 .cardBase{
     background-image: linear-gradient(#f0f0f0bb, #fff);
-    background-color: white;
     border-radius: 1.3em ;
     border: 1px solid #ffffff;
-    width: 300px;
-    height: 400px;
+    width: 320px;
+    height: 440px;
     box-shadow: 0em 1em 1em -0.5em #0000000e, 
     inset 0em 0em 1em -0.1em #ebebebbb;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 5fr 1fr;
-    /* column-gap: 0.5em;
-    row-gap: 0.5em; */
-    color: red;
-    
+    color: red;    
 }
 
 .numberLeft{
     display: grid;
     grid-column: 1 / 1;
     grid-row: 1 / 4;
-    /* background-color: antiquewhite; */
     align-items: start;
     justify-content: center;
     padding: 0.5em 0em;
@@ -50,16 +41,13 @@ body{
     display: grid;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    /* background-color: aqua; */
     align-items: center;
     justify-content: center;
-
 }
 .numberRight{
     display: grid;
     grid-column: 3 / 4;
     grid-row: 1 / 4;
-    /* background-color: antiquewhite; */
     align-items: start;
     justify-content: center;
     transform: rotateX(180deg);
@@ -72,19 +60,18 @@ body{
     align-items: center;
     font-size: 2rem;
     font-family: 'Gill Sans', 'Gill Sans MT','Trebuchet MS';
+    font-weight: 900;
 }
 
 table, tr , td {
     font-size: 3rem;
     width: 100%;
-    /* border: 1px solid gray; */
     row-gap: 0.27em;
     column-gap: 0.27em;
     border-collapse:collapse;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .table-down {
@@ -93,17 +80,17 @@ table, tr , td {
 
 
 /* aca se ocultan o se muestra un determinado patron */
-#A1{visibility: visible;}
+#A1{visibility: hidden;}
 #A2{visibility: hidden;}
-#A3{visibility: visible;}
+#A3{visibility: hidden;}
 
 #B1{visibility: hidden;}
-#B2{visibility: visible;}
+#B2{visibility: hidden;}
 #B3{visibility: hidden;}
 
-#C1{visibility: visible;}
+#C1{visibility: hidden;}
 #C2{visibility: hidden;}
-#C3{visibility: visible;}
+#C3{visibility: hidden;}
 /* estos selectores definen el patron central */
 #D1{visibility: hidden;}
 #D2{visibility: hidden;}
