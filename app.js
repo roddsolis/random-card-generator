@@ -1,20 +1,21 @@
 
-let mainContainer = document.getElementsByClassName('mainContainer')
-let elIconosDeCarta = ["fa-solid fa-club", "fa-solid fa-diamond", "fa-solid fa-spade", "fa-solid fa-heart"]
+const mainContainer = document.getElementsByClassName('mainContainer')
+const elIconosDeCarta = ["fa-solid fa-star", "fa-solid fa-diamond", "fa-solid fa-heart", "fa-solid fa-clover"]
+
 
 /* estos array definen el patron de la carta segun su numero */
 
 function numeroAleatorio1() {
-  var numeroAleatorio = Math.random();
-  var numeroEntero = Math.floor(numeroAleatorio * 8);
-  numeroEntero += 1;
-  return numeroEntero;
+    var numeroAleatorio = Math.random();
+    var numeroEntero = Math.floor(numeroAleatorio * 8);
+    numeroEntero += 1;
+    return numeroEntero;
 }
 
 function numeroAleatorio2() {
     var numeroAleatorio = Math.random();
-    var numeroEntero = Math.floor(numeroAleatorio * 3);
-    numeroEntero += 1;
+    var numeroEntero = Math.floor(numeroAleatorio * 4);
+    numeroEntero += 0;
     return numeroEntero;
 }
 
@@ -56,7 +57,7 @@ let carta = [
     {
         cardNumber: 8,
         viewIcon: ["visible", "hidden"],
-        CardPattern: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1],
+        CardPattern: [0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1],
     },
     {
         cardNumber: 9,
@@ -80,10 +81,17 @@ function cambiarCarta() {
     let tdItems = document.getElementsByClassName('column')
 
     numeroDeCarta[0].innerHTML = carta[num1].cardNumber
-    for (x in carta[num1].CardPattern) { tdItems[x].style.visibility = carta[num1].viewIcon[carta[num1].CardPattern[x]] /* este bucle recorre los iconos y cambia su valor */ }
-    
-    /* este valor cambia el icono cambiando los numeros del 0 al 1*/
+
+    /* este bucle recorre los iconos y cambia su valor */
+
+    for (x in carta[num1].CardPattern) { tdItems[x].style.visibility = carta[num1].viewIcon[carta[num1].CardPattern[x]] }
+
+    /* este valor cambia el icono cambiando los numeros del 0 al 3*/
+
     for (i in iconoDeCarta) { iconoDeCarta[i].className = elIconosDeCarta[num2] }
+
+    // console.log(iconoDeCarta[0].className)
+
 }
 
 
@@ -107,10 +115,25 @@ function clonarPatron() {
     mainContainer.append(tableMirror)
     numberRight.innerHTML = numberLeft.children[0].outerHTML
 
+    console.log(numberLeft.childNodes[1].childNodes[3].className)
+
+    let iconoDeCarta = document.querySelectorAll('i')
+
+    for (i in iconoDeCarta) {
+
+        if (numberLeft.childNodes[1].childNodes[3].className === "fa-solid fa-clover" || numberLeft.childNodes[1].childNodes[3].className === "fa-solid fa-star") {
+
+            document.body.style.color = "black"
+        }
+
+    }
+
 }
 
-cambiarCarta() 
+cambiarCarta()
 clonarPatron()
+
+
 
 
 
@@ -147,3 +170,7 @@ function contarPropiedadVisble (){
 }
 
 contarPropiedadVisble() */
+
+/* if( iconoDeCarta[i].className === "fa-solid fa-diamond" || iconoDeCarta[i].className === "fa-solid fa-heart"){
+    iconoDeCarta[i].style.color = "black"
+} */
